@@ -1,4 +1,3 @@
-// Move me to Profile.js!
 export function Profile() {
     return (
       <img
