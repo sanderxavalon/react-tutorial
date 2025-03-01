@@ -1,32 +1,27 @@
-import { sculptureList } from './data.ts';
+import { useState } from 'react';
 
-export default function Gallery() {
-  let index = 0;
+export default function App() {
+  const [isSent, setIsSent] = useState(false);
+  const [message, setMessage] = useState('');
 
-  function handleClick() {
-    index = index + 1;
+  if (isSent) {
+    return <h1>Thank you!</h1>;
+  } else {
+    // eslint-disable-next-line
+    return (
+      <form onSubmit={e => {
+        e.preventDefault();
+        alert(`Sending: "${message}"`);
+        setIsSent(true);
+      }}>
+        <textarea
+          placeholder="Message"
+          value={message}
+          onChange={e => setMessage(e.target.value)}
+        />
+        <br />
+        <button type="submit">Send</button>
+      </form>
+    );
   }
-
-  let sculpture = sculptureList[index];
-  return (
-    <>
-      <button onClick={handleClick}>
-        Next
-      </button>
-      <h2>
-        <i>{sculpture.name} </i> 
-        by {sculpture.artist}
-      </h2>
-      <h3>  
-        ({index + 1} of {sculptureList.length})
-      </h3>
-      <img 
-        src={sculpture.url} 
-        alt={sculpture.alt}
-      />
-      <p>
-        {sculpture.description}
-      </p>
-    </>
-  );
 }
