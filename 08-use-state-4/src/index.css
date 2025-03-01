@@ -46,6 +46,12 @@ ul {
   padding-inline-start: 20px;
 }
 
+button { display: block; margin-bottom: 10px; }
+.Page > * {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
 h2 { margin-top: 10px; margin-bottom: 0; }
 h3 {
   margin-top: 5px;

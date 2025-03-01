@@ -1,4 +1,4 @@
-import { sculptureList } from './data.ts';
+import { sculptureList } from './data.js';
 
 export default function Gallery() {
   let index = 0;
