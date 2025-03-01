@@ -2,11 +2,11 @@ export default function Form() {
   let firstName = '';
   let lastName = '';
 
-  function handleFirstNameChange(e) {
+  function handleFirstNameChange(e: React.ChangeEvent<HTMLInputElement>) {
     firstName = e.target.value;
   }
 
-  function handleLastNameChange(e) {
+  function handleLastNameChange(e: React.ChangeEvent<HTMLInputElement>) {
     lastName = e.target.value;
   }
 
