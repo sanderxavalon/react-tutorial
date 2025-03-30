@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState, ChangeEvent } from 'react';
 import Background from './Background';
-import Box from './Box';
+import Box, {Position} from './Box';
 
-const initialPosition = {
+const initialPosition: Position = {
   x: 0,
   y: 0
 };
@@ -13,12 +13,12 @@ export default function Canvas() {
     position: initialPosition
   });
 
-  function handleMove(dx, dy) {
+  function handleMove(dx: number, dy: number) {
     shape.position.x += dx;
     shape.position.y += dy;
   }
 
-  function handleColorChange(e) {
+  function handleColorChange(e: ChangeEvent<HTMLSelectElement>) {
     setShape({
       ...shape,
       color: e.target.value

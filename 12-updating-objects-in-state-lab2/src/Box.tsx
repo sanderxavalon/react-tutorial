@@ -1,25 +1,39 @@
-import { useState } from 'react';
+import { useState, PointerEvent } from 'react';
+
+// 定義位置介面
+export interface Position {
+  x: number;
+  y: number;
+}
+
+// 定義 Box 組件的 props 介面
+interface BoxProps {
+  children: React.ReactNode;
+  color: string;
+  position: Position;
+  onMove: (dx: number, dy: number) => void;
+}
 
 export default function Box({
   children,
   color,
   position,
   onMove
-}) {
+}: BoxProps) {
   const [
     lastCoordinates,
     setLastCoordinates
-  ] = useState(null);
+  ] = useState<Position | null>(null);
 
-  function handlePointerDown(e) {
-    e.target.setPointerCapture(e.pointerId);
+  function handlePointerDown(e: PointerEvent<HTMLDivElement>) {
+    e.currentTarget.setPointerCapture(e.pointerId);
     setLastCoordinates({
       x: e.clientX,
       y: e.clientY,
     });
   }
 
-  function handlePointerMove(e) {
+  function handlePointerMove(e: PointerEvent<HTMLDivElement>) {
     if (lastCoordinates) {
       setLastCoordinates({
         x: e.clientX,
@@ -31,7 +45,7 @@ export default function Box({
     }
   }
 
-  function handlePointerUp(e) {
+  function handlePointerUp(e: PointerEvent<HTMLDivElement>) {
     setLastCoordinates(null);
   }
 
