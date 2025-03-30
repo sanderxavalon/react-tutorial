@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 
 export default function Scoreboard() {
   const [player, setPlayer] = useState({
@@ -11,14 +11,14 @@ export default function Scoreboard() {
     player.score++;
   }
 
-  function handleFirstNameChange(e) {
+  function handleFirstNameChange(e: ChangeEvent<HTMLInputElement>) {
     setPlayer({
       ...player,
       firstName: e.target.value,
     });
   }
 
-  function handleLastNameChange(e) {
+  function handleLastNameChange(e: ChangeEvent<HTMLInputElement>) {
     setPlayer({
       lastName: e.target.value
     });
