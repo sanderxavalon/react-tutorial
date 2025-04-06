@@ -1,0 +1,308 @@
+:root {
+  --primary-color: #4a6baf;
+  --primary-hover: #3a5a9f;
+  --background-color: #f0f2f5;
+  --card-background: #ffffff;
+  --text-color: #2c3e50;
+  --border-color: #e0e0e0;
+  --update-color: #4caf50;
+  --update-hover: #3d8b40;
+  --delete-color: #f44336;
+  --delete-hover: #d32f2f;
+  --incorrect-color: #ff9800;
+  --incorrect-hover: #f57c00;
+  --correct-color: #4caf50;
+  --correct-hover: #3d8b40;
+  --original-color: #2196f3;
+  --new-color: #4caf50;
+  --modified-color: #ff9800;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.App {
+  display: flex;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  gap: 2rem;
+}
+
+.main-content {
+  flex: 1;
+  max-width: 800px;
+}
+
+.state-panel {
+  width: 400px;
+  background-color: var(--card-background);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 2rem;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+}
+
+.state-panel h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.state-content {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  overflow-x: auto;
+}
+
+.state-content pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.state-legend {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.state-legend h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+}
+
+.legend-color.original {
+  background-color: var(--original-color);
+}
+
+.legend-color.new {
+  background-color: var(--new-color);
+}
+
+.legend-color.modified {
+  background-color: var(--modified-color);
+}
+
+h1 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.implementation-controls {
+  background-color: var(--card-background);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.implementation-controls h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.toggle-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.toggle-button {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background-color: var(--correct-color);
+  color: white;
+}
+
+.toggle-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-button.active {
+  background-color: var(--incorrect-color);
+}
+
+.toggle-button.active:hover {
+  background-color: var(--incorrect-hover);
+}
+
+.add-button {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.add-button:hover {
+  background-color: var(--primary-hover);
+}
+
+.student-list {
+  list-style: none;
+}
+
+.student-item {
+  background-color: var(--card-background);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.student-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.student-info {
+  flex: 1;
+}
+
+.student-info h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.student-info p {
+  margin-bottom: 0.3rem;
+  color: var(--text-color);
+}
+
+.student-actions {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.update-button, .delete-button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.update-button {
+  background-color: var(--update-color);
+  color: white;
+}
+
+.update-button:hover {
+  background-color: var(--update-hover);
+}
+
+.delete-button {
+  background-color: var(--delete-color);
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: var(--delete-hover);
+}
+
+/* 動畫效果 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.student-item {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* 響應式設計 */
+@media (max-width: 1024px) {
+  .App {
+    flex-direction: column;
+  }
+
+  .state-panel {
+    width: 100%;
+    position: static;
+    max-height: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .App {
+    margin: 1rem auto;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .toggle-buttons {
+    grid-template-columns: 1fr;
+  }
+  
+  .student-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .student-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
