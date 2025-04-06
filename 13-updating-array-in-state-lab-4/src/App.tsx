@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useImmer } from 'use-immer';
 import AddTodo from './AddTodo.js';
-import TaskList from './TaskList.js';
+import TaskList, { Todo } from './TaskList.js';
 
 let nextId = 3;
 const initialTodos = [
