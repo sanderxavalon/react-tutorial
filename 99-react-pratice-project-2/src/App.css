@@ -1,0 +1,68 @@
+.calculator {
+  /* 計算機容器樣式 */
+  width: 300px;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.display {
+  /* 顯示區域樣式 */
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: right;
+  font-size: 24px;
+  border-radius: 5px;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.buttons {
+  /* 按鈕區域樣式 */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  /* 按鈕樣式 */
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #d0d0d0;
+}
+
+/* 運算符號按鈕特殊樣式 */
+button:nth-child(4n) {
+  background-color: #ff9500;
+  color: white;
+}
+
+button:nth-child(4n):hover {
+  background-color: #e68600;
+}
+
+/* 清除和等號按鈕特殊樣式 */
+button:nth-child(14),
+button:nth-child(15) {
+  background-color: #a5a5a5;
+  color: white;
+}
+
+button:nth-child(14):hover,
+button:nth-child(15):hover {
+  background-color: #999999;
+} 
