@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>城市問答</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: sans-serif;
+        margin: 20px;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 表單容器，用於收集用戶輸入 -->
+    <form id="form">
+      <!-- 表單標題 -->
+      <h2>城市問答</h2>
+      <!-- 問題描述 -->
+      <p>哪個城市橫跨兩個大洲？</p>
+      <!-- 文本輸入區域，用於用戶輸入答案 -->
+      <textarea id="textarea"></textarea>
+      <br />
+      <!-- 提交按鈕，初始狀態為禁用 -->
+      <button id="button" disabled>提交答案</button>
+      <!-- 加載提示信息，初始狀態為隱藏 -->
+      <p id="loading" style="display: none">加載中...</p>
+      <!-- 錯誤提示信息，初始狀態為隱藏，顯示為紅色 -->
+      <p id="error" style="display: none; color: red"></p>
+    </form>
+    <!-- 成功提示信息，初始狀態為隱藏 -->
+    <h1 id="success" style="display: none">答對了！</h1>
+
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

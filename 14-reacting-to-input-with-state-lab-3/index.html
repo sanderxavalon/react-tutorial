@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React + TS</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: sans-serif;
+        margin: 20px;
+        padding: 0;
+      }
+      label {
+        display: block;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="form">
+      <label>
+        First name:
+        <b id="firstNameText">Jane</b>
+        <input id="firstNameInput" value="Jane" style="display: none" />
+      </label>
+      <label>
+        Last name:
+        <b id="lastNameText">Jacobs</b>
+        <input id="lastNameInput" value="Jacobs" style="display: none" />
+      </label>
+      <button type="submit" id="editButton">Edit Profile</button>
+      <p><i id="helloText">Hello, Jane Jacobs!</i></p>
+    </form>
+    <script type="module" src="/src/index.js"></script>
+  </body>
+</html>
