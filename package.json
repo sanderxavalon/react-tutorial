@@ -3,6 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "workspaces": [
+    "15-choosing-the-state-structure*",
+    "14-reacting-to-input-with-state*",
     "13-updating-objects-in-state-*",
     "12-updating-objects-in-state-*",
     "11-queueing-updates*",
