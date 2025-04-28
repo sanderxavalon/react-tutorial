@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useImmer } from 'use-immer';
-import AddTodo from './AddTodo.js';
-import TaskList, { Todo } from './TaskList.js';
+import AddTodo from './AddTodo.jsx';
+import TaskList from './TaskList.jsx';
 
 let nextId = 3;
 const initialTodos = [
@@ -15,7 +15,7 @@ export default function TaskApp() {
     initialTodos
   );
 
-  function handleAddTodo(title: string) {
+  function handleAddTodo(title) {
     todos.push({
       id: nextId++,
       title: title,
@@ -23,17 +23,15 @@ export default function TaskApp() {
     });
   }
 
-  function handleChangeTodo(nextTodo: Todo) {
+  function handleChangeTodo(nextTodo) {
     const todo = todos.find(t =>
       t.id === nextTodo.id
     );
-    if (todo) {
-      todo.title = nextTodo.title;
-      todo.done = nextTodo.done;
-    }
+    todo.title = nextTodo.title;
+    todo.done = nextTodo.done;
   }
 
-  function handleDeleteTodo(todoId: number) {
+  function handleDeleteTodo(todoId) {
     const index = todos.findIndex(t =>
       t.id === todoId
     );

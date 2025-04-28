@@ -1,28 +1,10 @@
 import { useState } from 'react';
 
-export interface Todo {
-    id: number;
-    title: string;
-    done: boolean;
-  }
-  
-  interface TaskListProps {
-    todos: Todo[];
-    onChangeTodo: (todo: Todo) => void;
-    onDeleteTodo: (id: number) => void;
-  }
-  
-  interface TaskProps {
-    todo: Todo;
-    onChange: (todo: Todo) => void;
-    onDelete: (id: number) => void;
-  }
-
 export default function TaskList({
   todos,
   onChangeTodo,
   onDeleteTodo
-}: TaskListProps) {
+}) {
   return (
     <ul>
       {todos.map(todo => (
@@ -38,7 +20,7 @@ export default function TaskList({
   );
 }
 
-function Task({ todo, onChange, onDelete }: TaskProps) {
+function Task({ todo, onChange, onDelete }) {
   const [isEditing, setIsEditing] = useState(false);
   let todoContent;
   if (isEditing) {
