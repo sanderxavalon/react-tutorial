@@ -1,0 +1,200 @@
+.comment-item {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #ecf0f1;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.comment-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  flex-wrap: wrap;
+}
+
+.comment-author, .comment-date, .comment-edited {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.comment-edited {
+  color: #e67e22;
+  font-style: italic;
+}
+
+.comment-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.comment-content {
+  margin-bottom: 1rem;
+}
+
+.comment-content p {
+  margin: 0;
+  color: #34495e;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.edit-form {
+  margin-bottom: 1rem;
+}
+
+.edit-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #ecf0f1;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 80px;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+
+.edit-form textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.edit-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.reply-form {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+  border: 1px solid #e9ecef;
+}
+
+.reply-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.reply-form input,
+.reply-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #ecf0f1;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.reply-form input:focus,
+.reply-form textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.reply-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.reply-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.replies {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #ecf0f1;
+}
+
+.replies h4 {
+  margin: 0 0 1rem 0;
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.reply-item {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #e9ecef;
+}
+
+.reply-item:last-child {
+  margin-bottom: 0;
+}
+
+.reply-header {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  color: #7f8c8d;
+}
+
+.reply-author, .reply-date {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.reply-content {
+  margin-bottom: 0.75rem;
+}
+
+.reply-content p {
+  margin: 0;
+  color: #34495e;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.reply-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .comment-item {
+    padding: 1rem;
+  }
+  
+  .comment-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .comment-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .comment-actions {
+    justify-content: flex-start;
+  }
+  
+  .edit-actions,
+  .reply-actions {
+    flex-direction: column;
+  }
+} 
