@@ -1,0 +1,85 @@
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.blog-app.light {
+  background: #fff;
+  color: #222;
+}
+
+.blog-app.dark {
+  background: #222;
+  color: #fff;
+}
+
+.blog-app {
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+header {
+  padding: 2rem 2rem 1rem 2rem;
+}
+
+header button {
+  margin-top: 1rem;
+}
+
+main {
+  max-width: 1200px;
+  margin: 2rem auto 0 auto;
+  text-align: left;
+  padding: 0 2rem;
+}
+
+.blog-article {
+  background: rgba(200,200,200,0.1);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: background 0.3s;
+}
+
+.blog-app.dark .blog-article {
+  background: rgba(255,255,255,0.05);
+}
