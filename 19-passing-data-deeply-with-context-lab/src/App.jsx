@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import type { Place } from './data';
-import { places } from './data';
-import { getImageUrl } from './utils';
+import { places } from './data.js';
+import { getImageUrl } from './utils.js';
 
 export default function App() {
   const [isLarge, setIsLarge] = useState(false);
@@ -24,7 +23,7 @@ export default function App() {
   )
 }
 
-function List({ imageSize }: { imageSize: number }) {
+function List({ imageSize }) {
   const listItems = places.map(place =>
     <li key={place.id}>
       <Place
@@ -36,7 +35,7 @@ function List({ imageSize }: { imageSize: number }) {
   return <ul>{listItems}</ul>;
 }
 
-function Place({ place, imageSize } : { place: Place, imageSize: number }) {
+function Place({ place, imageSize }) {
   return (
     <>
       <PlaceImage
@@ -51,7 +50,7 @@ function Place({ place, imageSize } : { place: Place, imageSize: number }) {
   );
 }
 
-function PlaceImage({ place, imageSize }: { place: Place, imageSize: number }) {
+function PlaceImage({ place, imageSize }) {
   return (
     <img
       src={getImageUrl(place)}
