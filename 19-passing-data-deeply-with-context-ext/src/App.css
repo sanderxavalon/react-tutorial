@@ -1,0 +1,27 @@
+body {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.button.light {
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+}
+
+.button.dark {
+  background-color: black;
+  color: white;
+  border: 1px solid #444;
+}
+
+.toolbar {
+  margin-top: 20px;
+}
