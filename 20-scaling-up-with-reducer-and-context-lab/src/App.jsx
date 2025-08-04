@@ -6,6 +6,7 @@ import { CartIcon } from './components/CartIcon.jsx';
 import './style.css';
 
 function App() {
+  // 請在這裡使用 useState 創建狀態
   const [showCart, setShowCart] = useState(false);
 
   return (
@@ -16,7 +17,9 @@ function App() {
           <div className="header-controls">
             <button 
               className="toggle-cart-btn"
-              onClick={() => setShowCart(!showCart)}
+              onClick={() => {
+                // 請在這裡實現切換購物車顯示的邏輯
+              }}
             >
               <CartIcon />
               {showCart ? '隱藏購物車' : '顯示購物車'}
@@ -28,16 +31,16 @@ function App() {
           <div className="content-container">
             <ProductList />
           </div>
-          
-          {/* 遮罩層 */}
           <div 
             className={`cart-overlay ${showCart ? 'show' : ''}`}
-            onClick={() => setShowCart(false)}
+            onClick={() => {
+              // 請在這裡實現關閉購物車的邏輯
+            }}
           ></div>
-          
-          {/* 購物車 */}
           <div className={`cart-container ${showCart ? 'show' : ''}`}>
-            <Cart onClose={() => setShowCart(false)} />
+            <Cart onClose={() => {
+              // 請在這裡實現關閉購物車的邏輯
+            }} />
           </div>
         </main>
 

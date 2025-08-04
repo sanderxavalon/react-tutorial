@@ -1,123 +1,70 @@
 import { createContext, useContext, useReducer } from 'react';
 
-// 購物車的初始狀態
 const initialState = {
   items: [],
   totalItems: 0,
   totalPrice: 0
 };
 
-// Action types
+// TODO: 定義 Action Types
 const CART_ACTIONS = {
-  ADD_ITEM: 'ADD_ITEM',
-  REMOVE_ITEM: 'REMOVE_ITEM',
-  CLEAR_CART: 'CLEAR_CART',
-  UPDATE_QUANTITY: 'UPDATE_QUANTITY'
+
 };
 
-// Reducer function
+// TODO: 實現 Reducer 函數
+// 提示：使用 switch 語句處理不同的 action.type
 function cartReducer(state, action) {
   switch (action.type) {
-    case CART_ACTIONS.ADD_ITEM: {
-      const existingItem = state.items.find(item => item.id === action.payload.id);
-      
-      if (existingItem) {
-        // 如果商品已存在，增加數量
-        const updatedItems = state.items.map(item =>
-          item.id === action.payload.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        );
-        
-        return {
-          ...state,
-          items: updatedItems,
-          totalItems: state.totalItems + 1,
-          totalPrice: state.totalPrice + action.payload.price
-        };
-      } else {
-        // 如果商品不存在，新增商品
-        const newItem = { ...action.payload, quantity: 1 };
-        return {
-          ...state,
-          items: [...state.items, newItem],
-          totalItems: state.totalItems + 1,
-          totalPrice: state.totalPrice + action.payload.price
-        };
-      }
-    }
+
+    // 填空 : 處理添加商品的邏輯
+    // 提示：檢查商品是否已存在，如果存在則增加數量，否則新增商品
     
-    case CART_ACTIONS.REMOVE_ITEM: {
-      const itemToRemove = state.items.find(item => item.id === action.payload);
-      const updatedItems = state.items.filter(item => item.id !== action.payload);
-      
-      return {
-        ...state,
-        items: updatedItems,
-        totalItems: state.totalItems - itemToRemove.quantity,
-        totalPrice: state.totalPrice - (itemToRemove.price * itemToRemove.quantity)
-      };
-    }
+    // 填空 : 處理移除商品的邏輯
+    // 提示：找到要移除的商品，從陣列中過濾掉，並更新總數和總價
     
-    case CART_ACTIONS.UPDATE_QUANTITY: {
-      const { id, quantity } = action.payload;
-      const item = state.items.find(item => item.id === id);
-      const quantityDiff = quantity - item.quantity;
-      
-      const updatedItems = state.items.map(item =>
-        item.id === id ? { ...item, quantity } : item
-      );
-      
-      return {
-        ...state,
-        items: updatedItems,
-        totalItems: state.totalItems + quantityDiff,
-        totalPrice: state.totalPrice + (item.price * quantityDiff)
-      };
-    }
+    // 填空 : 處理更新商品數量的邏輯
+    // 提示：計算數量差異，更新商品數量，並相應調整總數和總價
     
-    case CART_ACTIONS.CLEAR_CART:
-      return initialState;
+    // 填空 : 處理清空購物車的邏輯
+    // 提示：返回初始狀態
     
     default:
       return state;
   }
 }
 
-// 創建 Context
 const CartContext = createContext();
 
-// Context Provider 組件
+// TODO: 實現 Context Provider 組件
 export function CartProvider({ children }) {
+  // 填空 7: 使用 useReducer
+  // 請在這裡使用 useReducer
   const [state, dispatch] = useReducer(cartReducer, initialState);
 
-  // 購物車操作方法
+  // TODO: 實現購物車操作方法
+  // 填空: 實現 addToCart 方法
   const addToCart = (product) => {
-    dispatch({ type: CART_ACTIONS.ADD_ITEM, payload: product });
+    // 請在這裡實現邏輯
   };
 
+  // 填空: 實現 removeFromCart 方法
   const removeFromCart = (productId) => {
-    dispatch({ type: CART_ACTIONS.REMOVE_ITEM, payload: productId });
+    // 請在這裡實現邏輯
   };
 
+  // 填空: 實現 updateQuantity 方法
   const updateQuantity = (productId, quantity) => {
-    if (quantity <= 0) {
-      removeFromCart(productId);
-    } else {
-      dispatch({ type: CART_ACTIONS.UPDATE_QUANTITY, payload: { id: productId, quantity } });
-    }
+    // 請在這裡實現邏輯
   };
 
+  // 填空: 實現 clearCart 方法
   const clearCart = () => {
-    dispatch({ type: CART_ACTIONS.CLEAR_CART });
+    // 請在這裡實現邏輯
   };
 
+  // TODO: 準備 Context 值
+  // 填空: 組合狀態和方法
   const value = {
-    ...state,
-    addToCart,
-    removeFromCart,
-    updateQuantity,
-    clearCart
   };
 
   return (
