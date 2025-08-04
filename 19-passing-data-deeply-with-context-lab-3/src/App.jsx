@@ -19,7 +19,13 @@ function App() {
 
   return (
     // TODO: 將 { user, login, logout } 提供給 context
-    <AuthContext.Provider value={{ /* TODO */ }}>
+    <AuthContext.Provider
+      value={
+        {
+          /* TODO */
+        }
+      }
+    >
       <Header />
       <Main />
     </AuthContext.Provider>
@@ -58,3 +64,5 @@ function Main() {
     </div>
   );
 }
+
+export default App;
