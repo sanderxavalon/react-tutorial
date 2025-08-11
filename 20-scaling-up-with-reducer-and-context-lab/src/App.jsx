@@ -1,12 +1,11 @@
-import { useState } from 'react';
-import { CartProvider } from './CartContext.jsx';
-import { ProductList } from './components/ProductList.jsx';
-import { Cart } from './components/Cart.jsx';
-import { CartIcon } from './components/CartIcon.jsx';
-import './style.css';
+import { useState } from "react";
+import { CartProvider } from "./CartContext.jsx";
+import { ProductList } from "./components/ProductList.jsx";
+import { Cart } from "./components/Cart.jsx";
+import { CartIcon } from "./components/CartIcon.jsx";
+import "./style.css";
 
 function App() {
-  // 請在這裡使用 useState 創建狀態
   const [showCart, setShowCart] = useState(false);
 
   return (
@@ -15,14 +14,14 @@ function App() {
         <header className="app-header">
           <h1>🛍️ React 購物車 Lab</h1>
           <div className="header-controls">
-            <button 
+            <button
               className="toggle-cart-btn"
               onClick={() => {
                 // 請在這裡實現切換購物車顯示的邏輯
               }}
             >
               <CartIcon />
-              {showCart ? '隱藏購物車' : '顯示購物車'}
+              {showCart ? "隱藏購物車" : "顯示購物車"}
             </button>
           </div>
         </header>
@@ -31,16 +30,18 @@ function App() {
           <div className="content-container">
             <ProductList />
           </div>
-          <div 
-            className={`cart-overlay ${showCart ? 'show' : ''}`}
+          <div
+            className={`cart-overlay ${showCart ? "show" : ""}`}
             onClick={() => {
               // 請在這裡實現關閉購物車的邏輯
             }}
           ></div>
-          <div className={`cart-container ${showCart ? 'show' : ''}`}>
-            <Cart onClose={() => {
-              // 請在這裡實現關閉購物車的邏輯
-            }} />
+          <div className={`cart-container ${showCart ? "show" : ""}`}>
+            <Cart
+              onClose={() => {
+                // 請在這裡實現關閉購物車的邏輯
+              }}
+            />
           </div>
         </main>
 
@@ -53,4 +54,4 @@ function App() {
   );
 }
 
-export default App; 
+export default App;
