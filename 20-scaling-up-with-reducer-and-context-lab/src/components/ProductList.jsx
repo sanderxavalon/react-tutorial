@@ -3,7 +3,10 @@ import { CartContext } from '../CartContext.jsx';
 import { products } from '../data/products.js';
 
 export function ProductList() {
-  // TODO: 使用 useContext 獲取購物車狀態
+  // 填空 1: 從 CartContext 中獲取 addToCart 方法
+  // 使用 useContext Hook 來獲取購物車的 addToCart 方法
+  // 這樣就可以在商品列表中使用購物車功能
+  const { addToCart } = useContext(CartContext);
 
   return (
     <div className="product-list">
@@ -16,12 +19,11 @@ export function ProductList() {
               <h3>{product.name}</h3>
               <p>{product.description}</p>
               <div className="product-price">${product.price}</div>
-              {/* TODO: 實現加入購物車功能 */}
+              {/* 填空 2: 添加點擊事件處理器 */}
+              {/* 當用戶點擊按鈕時，調用 addToCart 方法將商品加入購物車 */}
               <button 
                 className="add-to-cart-btn"
-                onClick={() => {
-                  // 請在這裡實現加入購物車的邏輯
-                }}
+                onClick={() => addToCart(product)}
               >
                 加入購物車
               </button>
