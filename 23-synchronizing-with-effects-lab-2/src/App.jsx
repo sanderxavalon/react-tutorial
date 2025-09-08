@@ -1,5 +1,5 @@
 import { useState } from "react";
-import MyInput from "./MyInput.js";
+import MyInput from "./MyInput";
 
 export default function Form() {
   const [show, setShow] = useState(false);
