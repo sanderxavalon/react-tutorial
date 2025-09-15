@@ -1,10 +1,21 @@
-import { useEffect } from 'react';
-import { createConnection } from './chat.js';
+import { useRef, useState, useEffect } from "react";
+import { createConnection } from "./chat.js";
 
 export default function ChatRoom() {
+  const [text, setText] = useState("");
+  const ref = useRef(false);
+
   useEffect(() => {
-    const connection = createConnection();
-    connection.connect();
+    if (!ref.current) {
+      const connection = createConnection();
+      connection.connect();
+      ref.current = true;
+    }
   }, []);
-  return <h1>Welcome to the chat!</h1>;
+  return (
+    <>
+      <input value={text} onChange={(e) => setText(e.target.value)} />
+      <h1>Welcome to the chat!</h1>
+    </>
+  );
 }
