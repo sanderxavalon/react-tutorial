@@ -5,9 +5,7 @@ const App = () => {
   const [board, setBoard] = useState(Array(9).fill(null));
   const [isXNext, setIsXNext] = useState(true);
 
-  const handleClick = (index) => {
-    // Implement your code here
-  };
+  const handleClick = (index) => {};
 
   return (
     <div className="App">
