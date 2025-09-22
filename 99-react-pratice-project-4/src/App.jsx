@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./index.css";
 
 const App = () => {
-  const [board, setBoard] = useState(Array(9).fill(null));
+  const [board, setBoard] = useState(Array(9).fill(undefined));
   const [isXNext, setIsXNext] = useState(true);
 
   const handleClick = (index) => {};
