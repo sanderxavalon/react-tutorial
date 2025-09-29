@@ -29,7 +29,7 @@ for ($i = 0; $i -lt $Count; $i++) {
     Write-Host "正在創建專案: $currentProjectName"
     
     # 使用 Vite 創建 React + TypeScript + SWC 專案
-    npm create vite@latest $currentProjectName -- --template react-swc-ts
+    npm create vite@latest $currentProjectName -- --template react-swc
     
     Write-Host "專案 $currentProjectName 創建完成！"
 }

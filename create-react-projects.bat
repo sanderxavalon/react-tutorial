@@ -40,7 +40,7 @@ for /L %%i in (0,1,%Count%) do (
     echo 正在創建專案: !currentProjectName!
     
     REM 使用 Vite 創建 React + TypeScript + SWC 專案
-    call npm create vite@latest !currentProjectName! -- --template react-swc-ts
+    call npm create vite@latest !currentProjectName! -- --template react-swc
     
     echo 專案 !currentProjectName! 創建完成！
 )
