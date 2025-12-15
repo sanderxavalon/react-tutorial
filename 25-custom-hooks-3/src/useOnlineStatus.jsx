@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export default function StatusBar() {
+export function useOnlineStatus() {
   const [isOnline, setIsOnline] = useState(true);
   useEffect(() => {
     function handleOnline() {
@@ -16,6 +16,5 @@ export default function StatusBar() {
       window.removeEventListener('offline', handleOffline);
     };
   }, []);
-
-  return <h1>{isOnline ? '✅ Online' : '❌ Disconnected'}</h1>;
+  return isOnline;
 }

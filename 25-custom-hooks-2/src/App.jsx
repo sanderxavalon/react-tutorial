@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export default function StatusBar() {
+export default function SaveButton() {
   const [isOnline, setIsOnline] = useState(true);
   useEffect(() => {
     function handleOnline() {
@@ -17,5 +17,13 @@ export default function StatusBar() {
     };
   }, []);
 
-  return <h1>{isOnline ? '✅ Online' : '❌ Disconnected'}</h1>;
+  function handleSaveClick() {
+    console.log('✅ Progress saved');
+  }
+
+  return (
+    <button disabled={!isOnline} onClick={handleSaveClick}>
+      {isOnline ? 'Save progress' : 'Reconnecting...'}
+    </button>
+  );
 }
